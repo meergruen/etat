@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+   <string name="app_name">Etat</string>
+   
+   <string name="payee_label">Laden</string>
+   <string name="payee_input_hint">Aldi</string>
+   <string name="payment_label">Zahlungsart</string>
+   <string name="payment_input_hint">z.B. bar</string>
+   <string name="date_label">Zahlungsdatum</string>
+   <string name="date_input_hint">1/1/1970</string>
+   
+   <string name="article_name_label">Bezeichnung</string>
+   <string name="article_name_input_hint">Tomaten</string>
+   <string name="price_label">Preis</string>
+   <string name="price_input_hint">1,99</string>
+   <string name="article_comment_label">Kommentar</string>
+   <string name="article_comment_input_hint">z.B. gut</string>
+   <string name="article_tags_label">Tags</string>
+   
+   <string name="add_bill_button_label">Rechnung speichern</string>
+   <string name="add_item_button_label">Artikel speichern</string>
+   
+</resources>
