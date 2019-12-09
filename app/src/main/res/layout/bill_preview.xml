@@ -11,16 +11,17 @@
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
         
-        tools:context=".OverviewActivity">
+        tools:context=".MainActivity">
 
 
     <TextView
             android:id="@+id/preview_payee"
-            android:text="Laden"
+            android:text="@string/payee_label"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:textSize="16sp"
             android:paddingEnd="20dp"
+			android:paddingRight="20dp"
             android:textStyle="bold"
 			android:textColor="@android:color/black" 
 
@@ -30,13 +31,14 @@
 	 
 	 <TextView
             android:id="@+id/preview_date"
-            android:text="Datum"
+            android:text="@string/payment_label"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textSize="16sp"
             android:paddingEnd="20dp"
+		 	android:paddingRight="20dp"
             android:textStyle="bold"
-			android:textColor="@android:color/gray" 
+			android:textColor="@color/gray"
 
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toEndOf="@+id/preview_payee"
@@ -50,6 +52,7 @@
             android:layout_height="wrap_content"
             android:textSize="16sp"
             android:paddingEnd="20dp"
+		 	android:paddingRight="20dp"
             android:textStyle="bold"
 			android:textColor="@android:color/black" 
 			android:gravity="right"
@@ -65,9 +68,10 @@
             android:layout_height="wrap_content"
             android:textSize="12sp"
             android:paddingEnd="20dp"
+		 	android:paddingRight="20dp"
             android:paddingTop="10dp"
             android:textStyle="bold"
-			android:textColor="@android:color/gray" 
+			android:textColor="@color/gray"
 
             app:layout_constraintTop_toBottomOf="@+id/preview_payee"
             app:layout_constraintStart_toStartOf="parent"
