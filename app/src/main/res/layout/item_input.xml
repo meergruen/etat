@@ -14,27 +14,25 @@
         tools:context=".BillInputActivity">
 
 
-    <TextView
+     <TextView
             android:id="@+id/article_name_label"
             android:text="@string/article_name_label"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/line_height"
             android:textSize="16sp"
-            android:paddingEnd="20dp"
-			android:paddingRight="20dp"
+			android:layout_marginEnd="@dimen/item_input_margin"
             android:textStyle="bold"
 
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"/>
      
      <android.widget.TextInputLayout
-            android:id="@+id/payee_input_box"
+            android:id="@+id/article_name_input_box"
  
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/line_height"
             android:textSize="16sp"
-            android:paddingEnd="20dp"
-			android:paddingRight="20dp"
+		 	android:layout_marginEnd="@dimen/item_input_margin"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toEndOf="@+id/article_name_label"
             app:layout_constraintEnd_toStartOf="@+id/price_label">
@@ -42,7 +40,7 @@
 			<android.widget.AutoCompleteTextView
 				android:id="@+id/article_name_input"
 				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
+				android:layout_height="@dimen/line_height"
 				android:hint="@string/article_name_input_hint"/>
 
 	 </android.widget.TextInputLayout>
@@ -52,10 +50,8 @@
             android:id="@+id/price_label"
             android:text="@string/price_label"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/line_height"
             android:textSize="16sp"
-            android:paddingEnd="20dp"
-		 	android:paddingRight="20dp"
             android:textStyle="bold"
 
             app:layout_constraintTop_toTopOf="parent"
@@ -65,7 +61,7 @@
             android:id="@+id/price_input_box"
  
             android:layout_width="50dp"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/line_height"
             android:textSize="16sp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent">
@@ -73,7 +69,7 @@
 			<android.widget.EditText
 				android:id="@+id/price_input"
 				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
+				android:layout_height="@dimen/line_height"
 				android:hint="@string/price_input_hint"
 				android:digits="0123456789.,"
 				android:inputType="numberDecimal"/>
@@ -86,51 +82,49 @@
             android:id="@+id/article_comment_label"
             android:text="@string/article_comment_label"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/line_height"
             android:textSize="16sp"
-            android:paddingEnd="20dp"
+		 	android:layout_marginEnd="@dimen/item_input_margin"
             android:textStyle="bold"
 
             app:layout_constraintTop_toBottomOf="@+id/price_input_box"
             app:layout_constraintStart_toStartOf="parent"/>
             
-      <EditText
+	<EditText
             android:id="@+id/article_comment_input"
-            android:text="@string/article_comment_input"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/line_height"
             android:textSize="16sp"
 			android:inputType="text"
+		    android:hint="@string/article_comment_input_hint"
+		  	android:autofillHints="@string/article_comment_input_hint"
 
             app:layout_constraintTop_toBottomOf="@+id/price_input_box"
-            app:layout_constraintStart_toStartOf="@+id/article_comment_label"
+            app:layout_constraintStart_toEndOf="@+id/article_comment_label"
             app:layout_constraintEnd_toEndOf="parent"/>
             
-       
-       <TextView
-            android:id="@+id/tag_label"
-            android:text="@string/tag_label"
+	<TextView
+            android:id="@+id/article_tags_label"
+            android:text="@string/article_tags_label"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/line_height"
             android:textSize="16sp"
-            android:paddingEnd="20dp"
+		   	android:layout_marginEnd="@dimen/item_input_margin"
             android:textStyle="bold"
 
             app:layout_constraintTop_toBottomOf="@+id/article_comment_label"
             app:layout_constraintStart_toStartOf="parent"/>
     
-    	 <Button
+	<Button
             android:id="@+id/add_item_button"
             android:text="@string/add_item_button_label"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/line_height"
             android:textSize="16sp"
-            android:paddingEnd="20dp"
-            android:paddingTop="20dp"
             android:textStyle="bold"
             android:onClick="addItem"
 
-            app:layout_constraintTop_toBottomOf="@+id/article_comment_label"
+            app:layout_constraintTop_toBottomOf="@+id/article_tags_label"
             app:layout_constraintStart_toStartOf="parent"/>
             
 

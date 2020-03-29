@@ -41,11 +41,11 @@ class Article {
     }
 
     override fun toString(): String {
-        var tagsStr = "["
+        var tagsStr = ""
         for (tag in items) {
             tagsStr += "\"$tag\","
         }
-        tagsStr = tagsStr.substring(0, tagsStr.length - 2) + "]"
+        tagsStr = tagsStr.substring(0, tagsStr.length - 1)
         return "{\"name\":\"" + name +
                 "\", \"price\":" + price +
                 ", \"comment\":\"" + comment +

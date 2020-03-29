@@ -1,0 +1,38 @@
+{
+	"expenses": [
+		{
+			"date": "1988-09-29",
+			"payee": "Aldi",
+			"payment": "bar",
+			"currency": "€",
+			"items": [
+				{
+					"name": "Butter, Milfina",
+					"price": 1.50,
+					"comment": "Fettig",
+					"tags": ["A", "Milchprodukt"]
+				},
+				{
+					"name": "Cabernet Sauvignon",
+					"price": 3.99,
+					"comment": "mmmhhh",
+					"tags": ["B", "Luxus"]
+				}
+			]
+		},
+		{
+			"date": "1988-10-03",
+			"payee": "Lidl",
+			"payment": "giro",
+			"currency": "€",
+			"items": [
+				{
+					"name": "Tomaten",
+					"price": 2.00,
+					"comment": "Gut",
+					"tags": ["A", "Gemüse", "Bio", "vegan"]
+				}
+			]
+		}
+	] 
+	}

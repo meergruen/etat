@@ -112,6 +112,7 @@ class BillInputActivity : Activity() {
         textView.setAdapter(adapter)
     }
 
+    /*
     fun setDate(view: View?) { //???
         showDialog(999)
         Toast.makeText(
@@ -119,7 +120,7 @@ class BillInputActivity : Activity() {
             Toast.LENGTH_SHORT
         )
             .show()
-    }
+    }*/
 
     /*
     override fun onCreateDialog(id: Int): Dialog { // TODO Auto-generated method stub
@@ -158,6 +159,7 @@ class BillInputActivity : Activity() {
         val app = applicationContext as EtatApp
         app.bills.add(newBill)
         app.saveData()
+
         newBill = Bill()
     }
 
@@ -166,6 +168,7 @@ class BillInputActivity : Activity() {
         newArticle.comment = commentView!!.text.toString()
         //newArticle.setTags(paymentView.getText());
         newBill.add(newArticle)
+
         newArticle = Article()
     }
 }

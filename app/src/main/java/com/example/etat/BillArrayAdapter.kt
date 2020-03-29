@@ -1,11 +1,14 @@
 package com.example.etat
 
 import android.content.Context
+import android.text.Html
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.TextView
+import androidx.core.text.HtmlCompat
+import java.net.URLEncoder
 import java.text.DateFormat
 import java.text.SimpleDateFormat
 
@@ -23,27 +26,27 @@ class BillArrayAdapter(
         convertView: View?,
         parent: ViewGroup
     ): View {
-        var convertView = convertView
-        val bill = getItem(position) as Bill?
-        if (convertView == null) {
-            convertView =
+        var cView = convertView
+        val bill = getItem(position) as Bill
+        if (cView == null) {
+            cView =
                 LayoutInflater.from(context).inflate(R.layout.bill_preview, parent, false)
         }
         // Lookup view for data population
         val payee =
-            convertView!!.findViewById<View>(R.id.preview_payee) as TextView
+            cView!!.findViewById<View>(R.id.preview_payee) as TextView
         val total =
-            convertView.findViewById<View>(R.id.preview_price) as TextView
+            cView.findViewById<View>(R.id.preview_price) as TextView
         val date =
-            convertView.findViewById<View>(R.id.preview_date) as TextView
+            cView.findViewById<View>(R.id.preview_date) as TextView
         val productList =
-            convertView.findViewById<View>(R.id.preview_items) as TextView
+            cView.findViewById<View>(R.id.preview_items) as TextView
         // Populate the data into the template view using the data object
-        payee.text = bill!!.payee
-        total.text = bill.totalString
+        payee.text = bill.payee
+        total.text = HtmlCompat.fromHtml(URLEncoder.encode(bill.totalString, "UTF8"), HtmlCompat.FROM_HTML_MODE_LEGACY)
         date.text = dateFormat.format(bill.date)
         productList.text = bill.itemPreview
-        return convertView
+        return cView
     }
 
 }

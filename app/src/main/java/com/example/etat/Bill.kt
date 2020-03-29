@@ -1,8 +1,9 @@
 package com.example.etat
 
+import android.util.Log
 import org.json.JSONException
 import org.json.JSONObject
-import java.text.DateFormat
+import java.net.URLEncoder
 import java.text.NumberFormat
 import java.text.ParseException
 import java.text.SimpleDateFormat
@@ -10,8 +11,9 @@ import java.util.*
 import kotlin.collections.ArrayList
 
 class Bill {
-   // var dateFormat = SimpleDateFormat("yyyy-MM-dd")
-    var dateFormat = DateFormat.getDateInstance()
+    var dateFormat = SimpleDateFormat("yyyy-MM-dd")
+   // var dateFormat = DateFormat.getDateInstance()
+    var tag = "Bill"
 
     @JvmField
     var date: Date = Date()
@@ -35,6 +37,14 @@ class Bill {
             currencySymbol = obj.getString("currency")
             paymentMethod = obj.getString("payment")
             val jsonItems = obj.getJSONArray("items")
+
+            Log.i(tag, currencySymbol)
+          //  var s = currencySymbol.toByteArray("UTF-8")
+            // String(currencySymbol.getBytes("UTF-8"), "ISO-8859-1")
+            var s2 = URLEncoder.encode(currencySymbol, "UTF-8")
+            var s3 = URLEncoder.encode(currencySymbol, "ISO-8859-1")
+            Log.i(tag, s2)
+            Log.i(tag, s3)
 
             for (i in 0 until jsonItems.length()) {
                 items.add(Article(jsonItems.getJSONObject(i), this))
@@ -67,15 +77,12 @@ class Bill {
     }
 
     fun setDate(year: Int, month: Int, day: Int) {
-        date = Date(year, month, day)
+        val calendar = GregorianCalendar(year, month, day)
+        date = calendar.getTime()
     }
 
-    fun setDate(cal: Calendar) {
-        date = Date(
-            cal[Calendar.YEAR],
-            cal[Calendar.MONTH],
-            cal[Calendar.DAY_OF_MONTH]
-        )
+    fun setDate(calendar: Calendar) {
+        date = calendar.getTime()
     }
 
     fun add(item: Article) {
@@ -117,19 +124,21 @@ class Bill {
 
     val itemPreview: String
         get() {
+            Log.i(tag, "${toString()}")
             var itemsStr = ""
             for (item in items) {
                 itemsStr += item.name + ", "
             }
+            Log.i(tag, "$itemsStr")
             return itemsStr.substring(0, itemsStr.length - 2)
         }
 
     override fun toString(): String {
-        var itemsStr = "["
+        var itemsStr = ""
         for (item in items) {
-            itemsStr += '"'.toString() + item.toString() + "\","
+            itemsStr += item.toString() + ","
         }
-        itemsStr = itemsStr.substring(0, itemsStr.length - 2) + "]"
+        itemsStr = itemsStr.substring(0, itemsStr.length - 1)
         return "{\"date\":\"" + dateFormat.format(date) +
                 "\", \"payee\":\"" + payee +
                 "\", \"payment\":\"" + paymentMethod +

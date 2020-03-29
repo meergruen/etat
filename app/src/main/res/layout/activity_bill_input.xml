@@ -18,10 +18,10 @@
             android:id="@+id/payee_label"
             android:text="@string/payee_label"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/line_height"
             android:textSize="16sp"
-            android:paddingEnd="20dp"
-			android:paddingRight="20dp"
+			android:layout_marginTop="20dp"
+			android:layout_marginEnd="20dp"
             android:textStyle="bold"
 
             app:layout_constraintTop_toTopOf="parent"
@@ -31,17 +31,17 @@
             android:id="@+id/payee_input_box"
  
             android:layout_width="100dp"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/line_height"
             android:textSize="16sp"
-            android:paddingEnd="20dp"
-		 	android:paddingRight="20dp"
+		 	android:layout_marginTop="20dp"
+		 	android:layout_marginEnd="20dp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toEndOf="@+id/payee_label">
 
 			<android.widget.AutoCompleteTextView
 				android:id="@+id/payee_input"
 				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
+				android:layout_height="@dimen/line_height"
 				android:hint="@string/payee_input_hint"/>
 
 	 </android.widget.TextInputLayout>
@@ -51,10 +51,10 @@
             android:id="@+id/payment_label"
             android:text="@string/payment_label"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/line_height"
             android:textSize="16sp"
-            android:paddingEnd="20dp"
-		 	android:paddingRight="20dp"
+		 	android:layout_marginTop="20dp"
+		 	android:layout_marginEnd="20dp"
             android:textStyle="bold"
 
             app:layout_constraintTop_toTopOf="parent"
@@ -64,15 +64,17 @@
             android:id="@+id/payment_input_box"
  
             android:layout_width="50dp"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/line_height"
             android:textSize="16sp"
+		 	android:layout_marginTop="20dp"
+		 	android:layout_marginEnd="20dp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toEndOf="@+id/payment_label">
 
 			<android.widget.TextInputEditText
 				android:id="@+id/payment_input"
 				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
+				android:layout_height="@dimen/line_height"
 				android:hint="@string/payment_input_hint"/>
 	 </android.widget.TextInputLayout>
 	 
@@ -81,10 +83,10 @@
             android:id="@+id/date_label"
             android:text="@string/date_label"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/line_height"
             android:textSize="16sp"
-            android:paddingEnd="20dp"
-			android:paddingRight="20dp"
+		 	android:layout_marginTop="20dp"
+			android:layout_marginEnd="20dp"
             android:textStyle="bold"
 
             app:layout_constraintTop_toTopOf="parent"
@@ -94,7 +96,7 @@
 	<android.widget.TextInputLayout
 			android:id="@+id/date_input_box"
 			android:layout_width="100dp"
-			android:layout_height="wrap_content"
+			android:layout_height="@dimen/line_height"
 			android:textSize="16sp"
 			
 			app:layout_constraintTop_toTopOf="parent"
@@ -103,7 +105,7 @@
 			<android.widget.EditText
 				android:id="@+id/date_input"
 				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
+				android:layout_height="@dimen/line_height"
 				android:clickable="true"
 				android:editable="false"
 				android:focusable="false"
@@ -115,11 +117,9 @@
             android:id="@+id/add_bill_button"
             android:text="@string/add_bill_button_label"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/line_height"
             android:textSize="16sp"
-            android:paddingEnd="20dp"
-		 	android:paddingRight="20dp"
-            android:paddingTop="20dp"
+		 	android:layout_marginTop="20dp"
             android:textStyle="bold"
             android:onClick="addBill"
 
@@ -128,23 +128,25 @@
             
             
 	 <TextView
-            android:id="@+id/item_label"
-            android:text="@string/item_label"
+            android:id="@+id/items_label"
+            android:text="@string/items_label"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/line_height"
             android:textSize="16sp"
-            android:paddingEnd="20dp"
-		 	android:paddingRight="20dp"
-            android:paddingTop="20dp"
+			android:layout_marginTop="20dp"
             android:textStyle="bold"
 
             app:layout_constraintTop_toBottomOf="@+id/add_bill_button"
             app:layout_constraintStart_toStartOf="parent"/>
-            
 
-            
-            
-      <include layout="@layout/item_input"
-            android:id="@+id/item_input"></include>
+
+	<include layout="@layout/item_input"
+		android:id="@+id/item_input"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="10dp"
+
+		app:layout_constraintTop_toBottomOf="@+id/items_label"
+		app:layout_constraintStart_toStartOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,6 +10,8 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
+		android:paddingTop="20dp"
+		android:paddingBottom="20dp"
         
         tools:context=".MainActivity">
 
@@ -18,10 +20,11 @@
             android:id="@+id/preview_payee"
             android:text="@string/payee_label"
             android:layout_width="100dp"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/item_preview_line_height"
             android:textSize="16sp"
-            android:paddingEnd="20dp"
-			android:paddingRight="20dp"
+			android:layout_marginEnd="@dimen/item_preview_margin"
+			android:layout_marginBottom="@dimen/item_preview_margin"
+			android:layout_marginStart="@dimen/item_preview_margin"
             android:textStyle="bold"
 			android:textColor="@android:color/black" 
 
@@ -29,14 +32,15 @@
             app:layout_constraintStart_toStartOf="parent"/>
 	 
 	 
-	 <TextView
+	<TextView
             android:id="@+id/preview_date"
-            android:text="@string/payment_label"
+            android:text="@string/date_label"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/item_preview_line_height"
             android:textSize="16sp"
-            android:paddingEnd="20dp"
-		 	android:paddingRight="20dp"
+		 	android:layout_marginEnd="@dimen/item_preview_margin"
+		 	android:layout_marginBottom="@dimen/item_preview_margin"
+		 	android:layout_marginStart="@dimen/item_preview_margin"
             android:textStyle="bold"
 			android:textColor="@color/gray"
 
@@ -45,31 +49,33 @@
             app:layout_constraintEnd_toStartOf="@+id/preview_price"/>
 
 	 
-	 <TextView
+	<TextView
             android:id="@+id/preview_price"
             android:text="Kosten"
-            android:layout_width="30dp"
-            android:layout_height="wrap_content"
+            android:layout_width="50dp"
+            android:layout_height="@dimen/item_preview_line_height"
             android:textSize="16sp"
-            android:paddingEnd="20dp"
-		 	android:paddingRight="20dp"
+		 	android:layout_marginEnd="@dimen/item_preview_margin"
+		 	android:layout_marginBottom="@dimen/item_preview_margin"
+		 	android:layout_marginStart="@dimen/item_preview_margin"
             android:textStyle="bold"
 			android:textColor="@android:color/black" 
-			android:gravity="right"
+			android:gravity="end"
 
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
             
             
-	 <TextView
+	<TextView
             android:id="@+id/preview_items"
             android:text="Produktliste"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="12sp"
-            android:paddingEnd="20dp"
-		 	android:paddingRight="20dp"
-            android:paddingTop="10dp"
+		 	android:layout_marginEnd="@dimen/item_preview_margin"
+		 	android:layout_marginBottom="@dimen/item_preview_margin"
+			android:layout_marginTop="@dimen/item_preview_margin"
+		 	android:layout_marginStart="@dimen/item_preview_margin"
             android:textStyle="bold"
 			android:textColor="@color/gray"
 

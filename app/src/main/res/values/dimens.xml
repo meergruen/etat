@@ -1,3 +1,10 @@
 <resources>
     <dimen name="fab_margin">16dp</dimen>
+    <dimen name="line_height">40dp</dimen>
+
+    <dimen name="item_input_margin">20dp</dimen>
+
+    <dimen name="item_preview_line_height">20dp</dimen>
+    <dimen name="item_preview_margin">20dp</dimen>
+
 </resources>

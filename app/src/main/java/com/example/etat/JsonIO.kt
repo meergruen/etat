@@ -4,11 +4,14 @@ import android.util.Log
 import org.json.JSONException
 import org.json.JSONObject
 import java.io.FileInputStream
+import java.io.FileOutputStream
 import java.io.FileWriter
 import java.io.IOException
 import java.util.*
 
 object JsonIO {
+
+    val tag = "JsonIO"
 
     @JvmStatic
 	fun importFinanceData(fileName: String): ArrayList<Bill> {
@@ -68,4 +71,6 @@ object JsonIO {
         }
         return fileContent
     }
+
+
 }
